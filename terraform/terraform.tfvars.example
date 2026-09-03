@@ -1,0 +1,6 @@
+aws_region                 = "us-east-2"
+project_name               = "aws-static-site-gh-actions-cicd"
+website_bucket_name        = "replace-with-a-globally-unique-bucket-name"
+origin_access_control_name = "marisol-portfolio-oac"
+distribution_comment       = "Marisol DevOps portfolio"
+force_destroy_bucket       = true

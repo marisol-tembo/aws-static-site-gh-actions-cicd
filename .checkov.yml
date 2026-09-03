@@ -1,0 +1,10 @@
+framework:
+  - terraform
+
+skip-check:
+  - CKV_AWS_18 # S3 access logs add extra buckets/storage for this lab portfolio project.
+  - CKV_AWS_144 # Cross-region replication is unnecessary for this single-region lab.
+  - CKV_AWS_145 # S3 uses AES256 managed encryption, not KMS, to keep the lab simple.
+  - CKV_AWS_68 # WAF adds monthly cost and is documented as a production improvement.
+  - CKV_AWS_86 # CloudFront access logging adds storage cost for a short-lived lab.
+  - CKV_AWS_174 # Default CloudFront certificate is used until a custom domain/ACM cert is added.
