@@ -13,7 +13,7 @@ variable "project_name" {
 variable "website_bucket_name" {
   description = "Globally unique S3 bucket name for the static website assets"
   type        = string
-  default     = "tembo-rico-bucket"
+  default     = "marisol-aws-static-site-gh-actions-cicd"
 }
 
 variable "origin_access_control_name" {
