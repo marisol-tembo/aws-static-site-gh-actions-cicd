@@ -1,0 +1,28 @@
+# Checkov policy for lab/portfolio use.
+# Free controls that improve security are applied in Terraform. Costly or
+# lab-inappropriate checks are skipped here with justification.
+
+framework:
+  - terraform
+
+skip-check:
+  # S3 access logs require extra storage and lifecycle management.
+  - CKV_AWS_18
+  # Cross-region replication adds complexity and potential cross-region storage cost.
+  - CKV_AWS_144
+  # This lab uses S3-managed AES256 encryption instead of KMS to avoid key management overhead.
+  - CKV_AWS_145
+  # Geo restriction is not appropriate for a public portfolio site.
+  - CKV_AWS_374
+  # Origin failover requires a second origin and is a production HA improvement.
+  - CKV_AWS_310
+  # WAF adds monthly cost and is documented as a production improvement.
+  - CKV_AWS_68
+  - CKV2_AWS_47
+  # CloudFront access logging adds storage cost for a short-lived lab.
+  - CKV_AWS_86
+  # Custom SSL requires a domain and ACM certificate; this lab uses the default CloudFront cert.
+  - CKV_AWS_174
+  - CKV2_AWS_42
+  # Event notifications are unnecessary without an event-driven processor.
+  - CKV2_AWS_62
